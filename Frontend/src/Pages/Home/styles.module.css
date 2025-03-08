@@ -102,7 +102,7 @@
   }
   
   .registerButton {
-    color: white;
+    color: rgb(184, 75, 75);
     padding: 0.5rem 1rem;
   }
   
@@ -116,8 +116,12 @@
   }
   
   .heroSection {
-    padding: 4rem 1rem;
     text-align: center;
+    background-image: url('../../assets/Cricketbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
   }
   
   .heroTitle {
@@ -179,6 +183,9 @@
   
   .stepItem {
     text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
   }
   
   .stepCircle {
@@ -192,6 +199,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.5rem;
+    margin-top: 20px;
   }
   
   .stepNumber {
@@ -212,14 +220,14 @@
   
   /* Footer */
   .footer {
-    background-color: white;
+    background-color: rgb(60, 59, 59);
     border-top: 1px solid #e5e7eb;
     padding: 2rem 1rem;
   }
   
   .footerText {
     text-align: center;
-    color: #4b5563;
+    color: #ffffff;
   }
   
   
