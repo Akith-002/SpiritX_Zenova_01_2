@@ -31,7 +31,7 @@ export default function Home() {
 
           <div className={styles.stepsGrid}>
             {/* Step 1 */}
-            <div className={styles.stepItem}>
+            <div className={styles.stepItem} data-popup="Select players from different universities to build your dream team.">
               <div className={styles.stepCircle}>
                 <span className={styles.stepNumber}>1</span>
               </div>
@@ -42,7 +42,7 @@ export default function Home() {
             </div>
 
             {/* Step 2 */}
-            <div className={styles.stepItem}>
+            <div className={styles.stepItem} data-popup="Balance your team selection within the allocated budget.">
               <div className={styles.stepCircle}>
                 <span className={styles.stepNumber}>2</span>
               </div>
@@ -51,7 +51,7 @@ export default function Home() {
             </div>
 
             {/* Step 3 */}
-            <div className={styles.stepItem}>
+            <div className={styles.stepItem} data-popup="Earn points based on your players' real-life performances and climb the leaderboard.">
               <div className={styles.stepCircle}>
                 <span className={styles.stepNumber}>3</span>
               </div>
@@ -60,6 +60,23 @@ export default function Home() {
                 Earn points based on your players' real-life performances and climb the leaderboard.
               </p>
             </div>
+          </div>
+        </section>
+        <section className={styles.aiSection + " " + styles.container}>
+          <div className={styles.aiContent}>
+            <h2 className={styles.aiTitle}>AI-Powered Assistance</h2>
+            <p className={styles.aiDescription}>
+              Meet Spiriter, your AI assistant that helps you make smart picks for your fantasy team. Get personalized
+              advice based on player statistics and match conditions.
+            </p>
+            <button className={styles.tryButton}>Try Spiriter Now</button>
+          </div>
+          <div className={styles.chatContainer}>
+            <div className={styles.chatQuestion}>Which batsman should I pick for my team?</div>
+            <p className={styles.chatAnswer}>
+              Based on recent form, I'd recommend Ashan Kumar from Moratuwa University. He's scored 3 half-centuries in
+              the last 4 matches and has a high strike rate against spin bowling.
+            </p>
           </div>
         </section>
       </main>
