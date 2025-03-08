@@ -22,7 +22,7 @@ export default function Home() {
             Join Spirit11, the fantasy cricket league for the Inter-University Cricket Tournament. Draft real university
             players, analyze statistics, and compete for the top spot!
           </p>
-          <button className={styles.ctaButton}>Get Started</button>
+          <button className={styles.ctaButton} data-popup="Click to get started with Spirit11!">Get Started</button>
         </section>
 
         {/* How It Works Section */}
@@ -62,6 +62,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* AI Section */}
         <section className={styles.aiSection + " " + styles.container}>
           <div className={styles.aiContent}>
             <h2 className={styles.aiTitle}>AI-Powered Assistance</h2>
@@ -71,7 +73,7 @@ export default function Home() {
             </p>
             <button className={styles.tryButton}>Try Spiriter Now</button>
           </div>
-          <div className={styles.chatContainer}>
+          <div className={styles.chatContainer} data-popup="This is a chat popup!">
             <div className={styles.chatQuestion}>Which batsman should I pick for my team?</div>
             <p className={styles.chatAnswer}>
               Based on recent form, I'd recommend Ashan Kumar from Moratuwa University. He's scored 3 half-centuries in
