@@ -1,0 +1,149 @@
+/* Sidebar.module.css */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 250px;
+  background: #222;
+  color: white;
+  padding-top: 20px;
+  position: fixed;
+  left: -250px;
+  transition: left 0.3s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.logoContainer {
+  padding: 24px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #10b981; /* Green color for the Spirit11 logo */
+  margin: 0;
+}
+
+.nav {
+  flex: 1;
+  overflow: auto;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.navItem:hover {
+  color: #10b981;
+}
+
+.activeNavItem {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  font-weight: 500;
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 16px 12px;
+}
+
+.logoutButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  color: #ef4444; /* Red color on hover for logout */
+}
+
+/* Mobile styles */
+.mobileMenuButton {
+  display: none;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+}
+
+.menuIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: white;
+  padding-top: 64px;
+}
+
+.mobileNav {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 10px;
+  color: white;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .mobileMenuButton {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobileMenu {
+    display: block;
+  }
+}
