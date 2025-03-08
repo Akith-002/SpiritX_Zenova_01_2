@@ -54,7 +54,7 @@
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
-    max-width: 1280px;
+    /* max-width: 1280px; */
   }
   
   .flexCol {
@@ -72,15 +72,24 @@
   
   /* Header styles */
   .header {
-    background-color: var(--green-600);
-    color: white;
+    background-color:#ffffff;
+    color: rgb(111, 12, 106);
+    height: 50px; 
     padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
   }
   
   .headerContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
   
   .logo {
@@ -91,19 +100,23 @@
   .buttonGroup {
     display: flex;
     gap: 0.5rem;
+    margin-right: 50px;
   }
   
   .loginButton {
-    background-color: white;
-    color: var(--green-600);
+    background-color: rgb(87, 11, 105);
+    color: #ffffff;
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    border-radius: 5px;
     font-weight: 500;
   }
   
   .registerButton {
-    color: rgb(184, 75, 75);
+    color: rgb(56, 10, 88);
     padding: 0.5rem 1rem;
+    background-color: transparent;
+    border-radius: 5px;
+    border-color: #6a0596;
   }
   
   .registerButton:hover {
@@ -113,6 +126,7 @@
   /* Main content */
   .main {
     background-color: var(--green-50);
+    padding-top: 4rem;
   }
   
   .heroSection {
@@ -122,13 +136,15 @@
     background-position: center;
     background-repeat: no-repeat;
     padding: 50px 0;
+    height: 50vh;
   }
   
   .heroTitle {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #111827;
+    color: #ffffff;
     margin-bottom: 1.5rem;
+    text-shadow: #5d4b63 0px 0px 10px;
   }
   
   @media (min-width: 768px) {
@@ -173,6 +189,8 @@
   .stepsGrid {
     display: grid;
     gap: 2rem;
+    margin-left: 50px;
+    margin-right: 50px;
   }
   
   @media (min-width: 768px) {
