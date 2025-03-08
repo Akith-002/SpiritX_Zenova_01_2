@@ -1,6 +1,17 @@
 import styles from "./styles.module.css"
+import { useNavigate } from "react-router-dom"
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
+  const handleSignUpClick = () => {
+    navigate("/signup");
+  };
+
   return (
     <div className={styles.flexCol + " " + styles.minHScreen}>
       {/* Navigation Bar */}
@@ -8,8 +19,8 @@ export default function Home() {
         <div className={styles.headerContainer + " " + styles.container}>
           <h1 className={styles.logo}>Spirit11</h1>
           <div className={styles.buttonGroup}>
-            <button className={styles.loginButton}>Login</button>
-            <button className={styles.registerButton}>Register</button>
+            <button className={styles.loginButton} onClick={handleLoginClick}>Login</button>
+            <button className={styles.registerButton} onClick={handleSignUpClick}> Sign Up</button>
           </div>
         </div>
       </header>
