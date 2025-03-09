@@ -26,7 +26,7 @@ const Players = () => {
 
           <div className={styles.filters}>
             <div className={styles.searchContainer}>
-              <Search className={styles.searchIcon} size={18} />
+              <Search className={styles.searchIcon} size={25} />
               <input
                 type="text"
                 placeholder="Search players..."
@@ -39,7 +39,7 @@ const Players = () => {
             <div className={styles.dropdownContainer}>
               <div className={styles.dropdown}>
                 <button className={styles.dropdownButton} onClick={() => setIsRoleDropdownOpen(!isRoleDropdownOpen)}>
-                  <Filter size={16} />
+                  <Filter size={20} />
                   <span>Role</span>
                   <span className={styles.chevron}>▼</span>
                 </button>
@@ -66,7 +66,7 @@ const Players = () => {
                   className={styles.dropdownButton}
                   onClick={() => setIsUniversityDropdownOpen(!isUniversityDropdownOpen)}
                 >
-                  <Filter size={16} />
+                  <Filter size={20} />
                   <span>University</span>
                   <span className={styles.chevron}>▼</span>
                 </button>
@@ -90,6 +90,7 @@ const Players = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );
