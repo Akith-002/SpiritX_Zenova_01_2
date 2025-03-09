@@ -2,8 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashbord from "./Pages/Dashbord/Dashbord"; // Corrected spelling
 import Players from "./Pages/players/players"; // Correctly import the Players component
-import Login from "./Pages/Home/Login";
-import Signup from "./Pages/Home/Signup";
 // User Pages
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Home/Login";
