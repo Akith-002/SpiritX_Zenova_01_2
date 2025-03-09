@@ -12,6 +12,7 @@ export default function Home() {
         <div className={styles.headerContainer + " " + styles.container}>
           <h1 className={styles.logo}>Spirit11</h1>
           <div className={styles.buttonGroup}>
+
             {/* Go to login page */}
             <button
               className={styles.loginButton}
@@ -26,6 +27,7 @@ export default function Home() {
             >
               Register
             </button>
+
           </div>
         </div>
       </header>
