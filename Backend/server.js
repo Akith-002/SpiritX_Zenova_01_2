@@ -8,7 +8,7 @@ const { log } = require("console");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -156,7 +156,7 @@ Economy Rate: ${stats.economyRate ? stats.economyRate.toFixed(2) : "N/A"}`
         res.json({ response });
       } else {
         // Use Gemini API for general queries about players with conversation history
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
         console.log(conversation.history);
         // Create a chat session with history
@@ -182,8 +182,8 @@ Economy Rate: ${stats.economyRate ? stats.economyRate.toFixed(2) : "N/A"}`
 
         // Create context for the model
         const context = `
-You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
-You have data about ${playerData.length} players. 
+You are Spiriter, a friendly AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
+You have data about ${playerData.length} players. Use markdown to format your responses.
 You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
 If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
 `;
@@ -353,7 +353,7 @@ Contribution to team: ${
           });
 
           const context = `
-You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11.
+You are Spiriter, a friendly AI assistant for a fantasy cricket game called Spirit11. Use markdown to format your responses.
 The user was previously asking about the player ${playerName}.
 You must never reveal or calculate player points.
 `;
@@ -389,8 +389,8 @@ You must never reveal or calculate player points.
           },
         });
 
-      // Create context for the model with player data
-      const context = `
+        // Create context for the model with player data
+        const context = `
 You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
 You have data about these players: ${playerData.map((p) => p.Name).join(", ")}.
 You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
@@ -436,6 +436,5 @@ function cleanupOldConversations() {
 }
 
 app.listen(PORT, async () => {
-  playerData = await playerDataPromise; // Wait for data to load
   console.log(`Server running on http://localhost:${PORT}`);
 });
