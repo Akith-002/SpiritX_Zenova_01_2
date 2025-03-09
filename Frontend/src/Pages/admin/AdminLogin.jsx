@@ -35,7 +35,7 @@ const AdminLogin = () => {
         {/* Right Side (Form) */}
         <div className="w-full p-12 bg-[#F4F6FF] flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">ADMIN LOGIN</h2>
-          <p className="text-center text-[#7886C7] mb-6">Admin login to manage the system</p>
+          <p className="text-center text-[#7886C7] mb-6">Login as an admin to manage the system</p>
 
           {errorMessage && (
             <p className="text-red-500 text-center mb-4">{errorMessage}</p>
