@@ -31,8 +31,8 @@ const App = () => {
           <Route path="/login" element={<Login />} /> {/* User Login Page */}
           <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}
           <Route path="/TeamSelection" element={<TeamSelection />} />{" "}
-          {/* User Signup Page */}
           <Route path="/MyTeam" element={<MyTeam />} /> {/* User Signup Page */}
+          
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/signup" element={<AdminSignup />} />
