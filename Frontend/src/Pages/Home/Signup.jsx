@@ -8,7 +8,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate(); // Initialize navigate function
 
-  const navigate = useNavigate(); // Initialize navigate function
+  //const navigate = useNavigate(); // Initialize navigate function
 
   const handleSubmit = (e) => {
     e.preventDefault();
