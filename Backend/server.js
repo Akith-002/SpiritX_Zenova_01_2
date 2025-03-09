@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
@@ -17,15 +18,12 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Load player data
 let playerData = [];
-const playerDataPromise = new Promise((resolve) => {
-  fs.createReadStream("sample_data.csv")
-    .pipe(csv())
-    .on("data", (data) => playerData.push(data))
-    .on("end", () => {
-      console.log("Player data loaded successfully");
-      resolve(playerData);
-    });
-});
+fs.createReadStream("sample_data.csv")
+  .pipe(csv())
+  .on("data", (data) => playerData.push(data))
+  .on("end", () => {
+    console.log("Player data loaded successfully");
+  });
 
 // Store conversation history by session ID
 const conversations = new Map();
@@ -117,6 +115,7 @@ app.post("/api/spiriter", async (req, res) => {
         )
         .join("\n")}`;
 
+      res.json({ response });
       contextToRemember = "bestTeam";
     }
     // Handling player statistics queries
@@ -133,7 +132,7 @@ app.post("/api/spiriter", async (req, res) => {
       if (foundPlayer) {
         const stats = calculatePlayerStats(foundPlayer);
 
-        response = `
+        const response = `
 Here are ${foundPlayer.Name}'s statistics:
 University: ${foundPlayer.University}
 Category: ${foundPlayer.Category}
@@ -154,7 +153,7 @@ Economy Rate: ${stats.economyRate ? stats.economyRate.toFixed(2) : "N/A"}`
     : ""
 }
 `;
-        contextToRemember = `player:${foundPlayer.Name}`;
+        res.json({ response });
       } else {
         // Use Gemini API for general queries about players with conversation history
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -187,7 +186,6 @@ You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. Yo
 You have data about ${playerData.length} players. 
 You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
 If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
-Remember previous questions from the conversation to provide relevant context in your answers.
 `;
 
         const result = await chat.sendMessage(
@@ -391,14 +389,12 @@ You must never reveal or calculate player points.
           },
         });
 
-        // Create context for the model with player data
-        const context = `
+      // Create context for the model with player data
+      const context = `
 You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
 You have data about these players: ${playerData.map((p) => p.Name).join(", ")}.
 You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
 If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
-Remember previous questions from the conversation to provide relevant context in your answers.
-${contextToRemember ? `Previous context: ${contextToRemember}` : ""}
 `;
 
         const result = await chat.sendMessage(

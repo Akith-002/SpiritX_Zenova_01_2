@@ -18,28 +18,22 @@ const Signup = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#2D336B] to-[#A9B5DF]">
       <div className="flex bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
         {/* Left Side (Image) */}
-        <div className="w-1/2 bg-[#F4F6FF] flex items-center justify-center relative">
+        <div className="w-1/2 bg-[#2D336B] flex items-center justify-center relative">
           <img
             src={signupImage}
             alt="Signup Illustration"
-            className="ww-full h-auto object-cover"
+            className="w-full h-auto object-cover"
           />
         </div>
 
         {/* Right Side (Form) */}
         <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">
-            SIGN UP
-          </h2>
-          <p className="text-center text-[#7886C7] mb-6">
-            Unclock your crickrt world!
-          </p>
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">SIGN UP</h2>
+          <p className="text-center text-[#7886C7] mb-6">Unlock your cricket world</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#2D336B] font-semibold">
-                E-MAIL
-              </label>
+              <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -61,9 +55,7 @@ const Signup = () => {
               />
             </div>
             <div>
-              <label className="block text-[#2D336B] font-semibold">
-                PASSWORD
-              </label>
+              <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
               <input
                 type="password"
                 placeholder="Enter your password"

@@ -81,7 +81,13 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
+  color:#2D336B;
   cursor: pointer;
+}
+
+.dropdownButton:hover {
+  background-color: #2D336B;
+  color: #fff;
 }
 
 .dropdownMenu {

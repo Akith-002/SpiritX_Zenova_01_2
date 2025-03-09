@@ -17,6 +17,7 @@ import TournamentSummary from "./Pages/admin/TournamentSummary";
 
 // Spiriter Page
 import Spiriter from "./Pages/Spiriter";
+import Leaderboard from "./Pages/leaderboard/Leaderboard";
 
 const App = () => {
   return (
@@ -38,8 +39,18 @@ const App = () => {
           <Route path="/admin/player-stats" element={<AdminPlayerStats />} />
           <Route path="/admin/tournament-summary" element={<TournamentSummary />} />
 
+          {/* Admin Players Management */}
+          <Route path="/admin/player-stats" element={<PlayerStats />} />
+          {/* Admin Player Stats */}
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route
+            path="/admin/tournament-summary"
+            element={<TournamentSummary />}
+          />{" "}
+          {/* Admin Tournament Summary */}
           {/* Spiriter Page */}
-          <Route path="/spiriter" element={<Spiriter />} /> 
+          <Route path="/spiriter" element={<Spiriter />} />{" "}
+          {/* Spiriter Page */}
         </Routes>
       </div>
     </Router>
