@@ -1,6 +1,10 @@
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export default function Home() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   return (
     <div className={styles.flexCol + " " + styles.minHScreen}>
       {/* Navigation Bar */}
@@ -8,8 +12,20 @@ export default function Home() {
         <div className={styles.headerContainer + " " + styles.container}>
           <h1 className={styles.logo}>Spirit11</h1>
           <div className={styles.buttonGroup}>
-            <button className={styles.loginButton}>Login</button>
-            <button className={styles.registerButton}>Register</button>
+            {/* Go to login page */}
+            <button
+              className={styles.loginButton}
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
+            {/* Go to register page */}
+            <button
+              className={styles.registerButton}
+              onClick={() => navigate("/signup")}
+            >
+              Register
+            </button>
           </div>
         </div>
       </header>
@@ -19,10 +35,17 @@ export default function Home() {
         <section className={styles.heroSection + " " + styles.container}>
           <h2 className={styles.heroTitle}>Build Your Dream Cricket Team</h2>
           <p className={styles.heroText}>
-            Join Spirit11, the fantasy cricket league for the Inter-University Cricket Tournament. Draft real university
-            players, analyze statistics, and compete for the top spot!
+            Join Spirit11, the fantasy cricket league for the Inter-University
+            Cricket Tournament. Draft real university players, analyze
+            statistics, and compete for the top spot!
           </p>
-          <button className={styles.ctaButton} data-popup="Click to get started with Spirit11!">Get Started</button>
+          <button
+            className={styles.ctaButton}
+            data-popup="Click to get started with Spirit11!"
+            onClick={() => navigate("/login")}
+          >
+            Get Started
+          </button>
         </section>
 
         {/* How It Works Section */}
@@ -31,33 +54,46 @@ export default function Home() {
 
           <div className={styles.stepsGrid}>
             {/* Step 1 */}
-            <div className={styles.stepItem} data-popup="Select players from different universities to build your dream team.">
+            <div
+              className={styles.stepItem}
+              data-popup="Select players from different universities to build your dream team."
+            >
               <div className={styles.stepCircle}>
                 <span className={styles.stepNumber}>1</span>
               </div>
               <h3 className={styles.stepTitle}>Draft Players</h3>
               <p className={styles.stepDescription}>
-                Select players from different universities to build your dream team.
+                Select players from different universities to build your dream
+                team.
               </p>
             </div>
 
             {/* Step 2 */}
-            <div className={styles.stepItem} data-popup="Balance your team selection within the allocated budget.">
+            <div
+              className={styles.stepItem}
+              data-popup="Balance your team selection within the allocated budget."
+            >
               <div className={styles.stepCircle}>
                 <span className={styles.stepNumber}>2</span>
               </div>
               <h3 className={styles.stepTitle}>Manage Budget</h3>
-              <p className={styles.stepDescription}>Balance your team selection within the allocated budget.</p>
+              <p className={styles.stepDescription}>
+                Balance your team selection within the allocated budget.
+              </p>
             </div>
 
             {/* Step 3 */}
-            <div className={styles.stepItem} data-popup="Earn points based on your players' real-life performances and climb the leaderboard.">
+            <div
+              className={styles.stepItem}
+              data-popup="Earn points based on your players' real-life performances and climb the leaderboard."
+            >
               <div className={styles.stepCircle}>
                 <span className={styles.stepNumber}>3</span>
               </div>
               <h3 className={styles.stepTitle}>Compete & Win</h3>
               <p className={styles.stepDescription}>
-                Earn points based on your players' real-life performances and climb the leaderboard.
+                Earn points based on your players' real-life performances and
+                climb the leaderboard.
               </p>
             </div>
           </div>
@@ -68,16 +104,23 @@ export default function Home() {
           <div className={styles.aiContent}>
             <h2 className={styles.aiTitle}>AI-Powered Assistance</h2>
             <p className={styles.aiDescription}>
-              Meet Spiriter, your AI assistant that helps you make smart picks for your fantasy team. Get personalized
-              advice based on player statistics and match conditions.
+              Meet Spiriter, your AI assistant that helps you make smart picks
+              for your fantasy team. Get personalized advice based on player
+              statistics and match conditions.
             </p>
             <button className={styles.tryButton}>Try Spiriter Now</button>
           </div>
-          <div className={styles.chatContainer} data-popup="This is a chat popup!">
-            <div className={styles.chatQuestion}>Which batsman should I pick for my team?</div>
+          <div
+            className={styles.chatContainer}
+            data-popup="This is a chat popup!"
+          >
+            <div className={styles.chatQuestion}>
+              Which batsman should I pick for my team?
+            </div>
             <p className={styles.chatAnswer}>
-              Based on recent form, I'd recommend Ashan Kumar from Moratuwa University. He's scored 3 half-centuries in
-              the last 4 matches and has a high strike rate against spin bowling.
+              Based on recent form, I'd recommend Ashan Kumar from Moratuwa
+              University. He's scored 3 half-centuries in the last 4 matches and
+              has a high strike rate against spin bowling.
             </p>
           </div>
         </section>
@@ -86,10 +129,11 @@ export default function Home() {
       {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.container}>
-          <p className={styles.footerText}>© 2025 Spirit11. All rights reserved.</p>
+          <p className={styles.footerText}>
+            © 2025 Spirit11. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
