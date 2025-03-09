@@ -15,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 import styles from "./Navbar.module.css";
+import AuthService from "../../services/auth.service"; // Import the AuthService
 
 const navItems = [
   {
@@ -32,8 +33,6 @@ const navItems = [
     href: "/TeamSelection",
     icon: UserPlus,
   },
-
-
   {
     title: "My Team",
     href: "/MyTeam",
@@ -66,8 +65,13 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleLogoutClick = () => {
-    // Perform any logout logic here (e.g., clearing tokens)
+  const handleLogoutClick = (e) => {
+    e.preventDefault(); // Prevent the default link behavior
+
+    // Use AuthService to log out (clear token and user data)
+    AuthService.logout();
+
+    // Navigate to login page
     navigate("/login");
   };
 
