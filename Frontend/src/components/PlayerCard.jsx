@@ -4,9 +4,13 @@ const PlayerCard = ({ player }) => {
   return (
     <div className="player-card">
       <h3>{player.name}</h3>
-      <p>Role: {player.role}</p>
-      <p>Stats: {player.stats}</p>
-      {/* You can add more details about the player here */}
+      <p>University: {player.university}</p>
+      <p>Category: {player.category}</p>
+      <p>Total Runs: {player.totalRuns}</p>
+      <p>Innings Played: {player.inningsPlayed}</p>
+      <p>Wickets: {player.wickets}</p>
+      <p>Overs Bowled: {player.oversBowled}</p>
+      <p>Runs Conceded: {player.runsConceded}</p>
     </div>
   );
 };
