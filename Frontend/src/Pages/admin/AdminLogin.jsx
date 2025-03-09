@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -27,6 +27,8 @@ const AdminLogin = () => {
     // On successful login, redirect or perform necessary actions
     setErrorMessage(""); // Clear previous errors
     // You can redirect or continue the login flow here (e.g., navigate to dashboard)
+
+    Navigate("/admin/dashboard"); // Redirect to admin dashboard
   };
 
   return (
@@ -34,8 +36,12 @@ const AdminLogin = () => {
       <div className="flex bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
         {/* Right Side (Form) */}
         <div className="w-full p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">ADMIN LOGIN</h2>
-          <p className="text-center text-[#7886C7] mb-6">Login as an admin to manage the system</p>
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">
+            ADMIN LOGIN
+          </h2>
+          <p className="text-center text-[#7886C7] mb-6">
+            Login as an admin to manage the system
+          </p>
 
           {errorMessage && (
             <p className="text-red-500 text-center mb-4">{errorMessage}</p>
@@ -43,7 +49,9 @@ const AdminLogin = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
+              <label className="block text-[#2D336B] font-semibold">
+                E-MAIL
+              </label>
               <input
                 type="email"
                 placeholder="Enter admin email"
@@ -54,7 +62,9 @@ const AdminLogin = () => {
               />
             </div>
             <div>
-              <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
+              <label className="block text-[#2D336B] font-semibold">
+                PASSWORD
+              </label>
               <input
                 type="password"
                 placeholder="Enter admin password"
