@@ -34,8 +34,8 @@ const MyTeam = () => {
           </div>
           <div className="bg-white p-4 rounded-lg shadow">
             <p className="text-gray-500">Team Value</p>
-            <h2 className="text-3xl font-bold text-blue-900">$1750</h2>
-            <p className="text-gray-600">Out of $1000 budget</p>
+            <h2 className="text-3xl font-bold text-blue-900">Rs. 1750</h2>
+            <p className="text-gray-600">Out of Rs.1000 budget</p>
           </div>
         </div>
 
