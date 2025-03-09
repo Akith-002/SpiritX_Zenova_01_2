@@ -286,14 +286,14 @@ const Leaderboard = () => {
                       University {getSortIcon("university")}
                     </div>
                   </th>
-                  <th
+                  {/* <th
                     className={sortColumn === "points" ? styles.sortActive : ""}
                     onClick={() => handleSort("points")}
                   >
                     <div className={styles.thContent}>
                       Points {getSortIcon("points")}
                     </div>
-                  </th>
+                  </th> */}
                   <th
                     className={
                       sortColumn === "winnings" ? styles.sortActive : ""
@@ -327,9 +327,9 @@ const Leaderboard = () => {
                     <td>{item.name}</td>
                     <td>{item.teamName}</td>
                     <td>{item.university}</td>
-                    <td className={styles.pointsCell}>
+                    {/* <td className={styles.pointsCell}>
                       {item.points.toLocaleString()}
-                    </td>
+                    </td> */}
                     <td className={styles.winningsCell}>
                       Rs. {item.winnings.toLocaleString()}
                     </td>
