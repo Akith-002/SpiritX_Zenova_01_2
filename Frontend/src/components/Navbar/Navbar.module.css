@@ -1,9 +1,11 @@
 .sidebar {
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: column;
   width: 240px;
   height: 100vh;
-  background-color: #2D336B;
+  background-color: #2d336b;
   color: #ffffff;
   position: fixed;
   left: 0;
@@ -100,12 +102,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #2D336B;
+  background-color: #2d336b;
   color: #ffffff;
   max-width: 250px;
   height: 100vh;
-  
-  
 }
 
 .menuButton {
@@ -114,7 +114,6 @@
   color: #ffffff;
   font-size: 1.5rem;
   cursor: pointer;
-  
 }
 
 .navItems {
@@ -150,4 +149,3 @@
     display: none;
   }
 }
-

@@ -2,7 +2,17 @@
 
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { LayoutDashboard, Users, UserPlus, Trophy, DollarSign, MessageSquare, LogOut, Menu, X } from "lucide-react";
+import {
+  LayoutDashboard,
+  Users,
+  UserPlus,
+  Trophy,
+  DollarSign,
+  MessageSquare,
+  LogOut,
+  Menu,
+  X,
+} from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const navItems = [
@@ -17,28 +27,18 @@ const navItems = [
     icon: Users,
   },
   {
-    title: "Select Team",
-    href: "/dashboard/select-team",
-    icon: UserPlus,
-  },
-  {
     title: "My Team",
     href: "/dashboard/team",
     icon: Users,
   },
   {
-    title: "Budget",
-    href: "/dashboard/budget",
-    icon: DollarSign,
-  },
-  {
     title: "Leaderboard",
-    href: "/dashboard/leaderboard",
+    href: "/leaderboard",
     icon: Trophy,
   },
   {
     title: "Spiriter",
-    href: "/dashboard/spiriter",
+    href: "/spiriter",
     icon: MessageSquare,
   },
 ];
@@ -68,13 +68,20 @@ const Navbar = () => {
         <ul className={styles.navItems}>
           {navItems.map((item) => (
             <li key={item.href} className={styles.navItem}>
-              <Link to={item.href} className={location.pathname === item.href ? "active" : ""}>
+              <Link
+                to={item.href}
+                className={location.pathname === item.href ? "active" : ""}
+              >
                 <item.icon /> {item.title}
               </Link>
             </li>
           ))}
           <li className={styles.navItem}>
-            <Link to="/login" className={location.pathname === "/logout" ? "active" : ""} onClick={handleLogoutClick}>
+            <Link
+              to="/login"
+              className={location.pathname === "/logout" ? "active" : ""}
+              onClick={handleLogoutClick}
+            >
               <LogOut /> Log Out
             </Link>
           </li>
@@ -85,4 +92,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
