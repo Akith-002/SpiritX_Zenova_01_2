@@ -16,6 +16,83 @@
     /* border: 2px solid black; */
     border-radius: 10px;
     margin: 20px;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 5px rgb(83, 92, 131);
   }
+
+  .main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9fafb;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #111827;
+    text-align: left;
+  }
+  
+  .subtitle {
+    color: #6b7280;
+    margin: 4px 0 0;
+  }
+  
+  .createTeamBtn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .createTeamBtn:hover {
+    background-color: #15803d;
+  }
+
+  /* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.statDetail {
+  color: #6b7280;
+  font-size: 14px;
+}
+  
