@@ -1,19 +1,20 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Use useNavigate
-import signupImage from "../../assets/signupImage.jpg";
+import signupImage from "../../assets/signupImage.jpg"; // Ensure the image exists in assets folder
+import { useNavigate } from "react-router-dom"; // Corrected import
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize navigate function
 
   const navigate = useNavigate(); // Initialize navigate function
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Name:", name, "Password:", password);
-
-    navigate("/dashboard"); // Correctly using navigate
+    
+    navigate("/dashbord"); // Corrected spelling
   };
 
   return (

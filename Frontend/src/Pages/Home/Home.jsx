@@ -110,7 +110,12 @@ export default function Home() {
               for your fantasy team. Get personalized advice based on player
               statistics and match conditions.
             </p>
-            <button className={styles.tryButton}>Try Spiriter Now</button>
+            <button
+              className={styles.tryButton}
+              onClick={() => navigate("/login")} // Navigate to login page
+            >
+              Try Spiriter Now
+            </button>
           </div>
           <div
             className={styles.chatContainer}

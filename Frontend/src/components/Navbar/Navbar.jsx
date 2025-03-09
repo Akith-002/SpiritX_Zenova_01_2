@@ -10,6 +10,7 @@ import {
   DollarSign,
   MessageSquare,
   LogOut,
+  User,
   Menu,
   X,
 } from "lucide-react";
@@ -27,9 +28,16 @@ const navItems = [
     icon: Users,
   },
   {
+    title: "Select Team",
+    href: "/TeamSelection",
+    icon: UserPlus,
+  },
+
+
+  {
     title: "My Team",
-    href: "/dashboard/team",
-    icon: Users,
+    href: "/MyTeam",
+    icon: User,
   },
   {
     title: "Leaderboard",
