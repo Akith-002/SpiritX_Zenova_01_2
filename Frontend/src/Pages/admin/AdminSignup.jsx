@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Add this import
+import signupImage from "../../assets/adminsignupimage.jpg"; // Ensure the image exists in assets folder
 
 const AdminSignup = () => {
   const [email, setEmail] = useState("");
@@ -32,9 +33,13 @@ const AdminSignup = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#2D336B] to-[#A9B5DF]">
       <div className="flex bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
-        {/* Left Side (No Image) */}
+        {/* Left Side with Image */}
         <div className="w-1/2 bg-[#2D336B] flex items-center justify-center relative">
-          {/* Removed Image */}
+          <img
+            src={signupImage}
+            alt="Admin Signup"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Right Side (Form) */}
