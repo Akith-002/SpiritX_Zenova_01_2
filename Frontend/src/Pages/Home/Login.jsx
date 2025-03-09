@@ -1,13 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import signupImage from "../../assets/signupImage.jpg"; // Ensure the image exists in assets folder
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize navigate function
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
+
+    // Redirect to homepage after form submission
+    navigate("/home");
   };
 
   return (
@@ -18,18 +23,24 @@ const Login = () => {
           <img
             src={signupImage}
             alt="Login Illustration"
-            className="w-full h-auto object-cover" // Changed to w-full for better width responsiveness
+            className="w-full h-auto object-cover"
           />
         </div>
 
         {/* Right Side (Form) */}
         <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">LOGIN</h2>
-          <p className="text-center text-[#7886C7] mb-6">Welcome back! Log in to continue</p>
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">
+            LOGIN
+          </h2>
+          <p className="text-center text-[#7886C7] mb-6">
+            Welcome back! Log in to continue
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
+              <label className="block text-[#2D336B] font-semibold">
+                E-MAIL
+              </label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -40,7 +51,9 @@ const Login = () => {
               />
             </div>
             <div>
-              <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
+              <label className="block text-[#2D336B] font-semibold">
+                PASSWORD
+              </label>
               <input
                 type="password"
                 placeholder="Enter your password"
