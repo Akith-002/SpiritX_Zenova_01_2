@@ -17,19 +17,9 @@ const navItems = [
     icon: Users,
   },
   {
-    title: "Select Team",
-    href: "/dashboard/select-team",
-    icon: UserPlus,
-  },
-  {
     title: "My Team",
     href: "/dashboard/team",
     icon: Users,
-  },
-  {
-    title: "Budget",
-    href: "/dashboard/budget",
-    icon: DollarSign,
   },
   {
     title: "Leaderboard",
