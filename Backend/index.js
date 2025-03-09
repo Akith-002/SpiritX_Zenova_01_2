@@ -2,6 +2,9 @@ require("dotenv").config();
 const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors');
+const userRoutes = require('./routes/user.routes.js');
+const teamRoutes = require('./routes/team.routes.js');
+const playerRoutes = require('./routes/player.routes.js');
 const app = express()
 
 const PORT = process.env.PORT || 3000;
@@ -14,6 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes configuration
 app.use('/api/users', userRoutes);
+app.use('/api/teams', teamRoutes);
+app.use('/api/players', playerRoutes);
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
