@@ -33,7 +33,7 @@ const navItems = [
   },
   {
     title: "Leaderboard",
-    href: "/dashboard/leaderboard",
+    href: "/leaderboard",
     icon: Trophy,
   },
   {
