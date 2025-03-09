@@ -124,3 +124,20 @@ button {
 button:hover {
     background-color: #1f2855;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .create-player-form {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .players-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .player-card {
+        width: 100%;
+    }
+}
