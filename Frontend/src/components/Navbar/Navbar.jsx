@@ -25,7 +25,7 @@ const navItems = [
   },
   {
     title: "Players",
-    href: "/players",
+    href: "/NewPlayers",
     icon: Users,
   },
   {
