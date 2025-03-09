@@ -14,9 +14,8 @@ import AdminSignup from "./Pages/admin/AdminSignup";
 import AdminPlayers from "./Pages/admin/Players";
 import AdminPlayerStats from "./Pages/admin/PlayerStats"; // Ensure correct import
 import TournamentSummary from "./Pages/admin/TournamentSummary";
-
-// Spiriter Page
-import Spiriter from "./Pages/Spiriter";
+// Spiriter Page (Assuming this is another part of the app)
+import Spiriter from "./Pages/spiriter/Spiriter";
 import Leaderboard from "./Pages/leaderboard/Leaderboard";
 
 const App = () => {
@@ -25,22 +24,24 @@ const App = () => {
       <div className="App">
         <Routes>
           {/* User Routes */}
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<Home />} />
           <Route path="/dashbord" element={<Dashbord />} />
-          <Route path="/players" element={<Players />} /> 
-          <Route path="/home" element={<Home />} /> 
+          <Route path="/players" element={<Players />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} /> {/* User Login Page */}
-          <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}          
-          <Route path="/TeamSelection" element={<TeamSelection />} /> {/* User Signup Page */}
+          <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}
+          <Route path="/TeamSelection" element={<TeamSelection />} />{" "}
+          {/* User Signup Page */}
           <Route path="/MyTeam" element={<MyTeam />} /> {/* User Signup Page */}
-
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/signup" element={<AdminSignup />} />
           <Route path="/admin/players" element={<AdminPlayers />} />
           <Route path="/admin/player-stats" element={<AdminPlayerStats />} />
-          <Route path="/admin/tournament-summary" element={<TournamentSummary />} />
-
+          <Route
+            path="/admin/tournament-summary"
+            element={<TournamentSummary />}
+          />
           {/* Admin Players Management */}
           <Route path="/admin/player-stats" element={<PlayerStats />} />
           {/* Admin Player Stats */}
@@ -48,11 +49,9 @@ const App = () => {
           <Route
             path="/admin/tournament-summary"
             element={<TournamentSummary />}
-          />{" "}
-          {/* Admin Tournament Summary */}
+          />
           {/* Spiriter Page */}
           <Route path="/spiriter" element={<Spiriter />} />{" "}
-          {/* Spiriter Page */}
         </Routes>
       </div>
     </Router>
