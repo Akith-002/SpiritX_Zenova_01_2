@@ -8,10 +8,12 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate(); // Initialize navigate function
 
+  const navigate = useNavigate(); // Initialize navigate function
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Name:", name, "Password:", password);
-
+    
     navigate("/dashbord"); // Corrected spelling
   };
 
@@ -29,12 +31,18 @@ const Signup = () => {
 
         {/* Right Side (Form) */}
         <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">SIGN UP</h2>
-          <p className="text-center text-[#7886C7] mb-6">Unlock your cricket world</p>
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">
+            SIGN UP
+          </h2>
+          <p className="text-center text-[#7886C7] mb-6">
+            Unlock your cricket world
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
+              <label className="block text-[#2D336B] font-semibold">
+                E-MAIL
+              </label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -56,7 +64,9 @@ const Signup = () => {
               />
             </div>
             <div>
-              <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
+              <label className="block text-[#2D336B] font-semibold">
+                PASSWORD
+              </label>
               <input
                 type="password"
                 placeholder="Enter your password"
@@ -78,9 +88,8 @@ const Signup = () => {
           <p className="text-center text-gray-600 text-sm mt-6">
             Already have an account?{" "}
             <a
-              href="#"
+              onClick={() => navigate("/login")} // Corrected the navigation
               className="text-blue-500 hover:underline"
-              onClick={() => navigate("/login")} // Navigate to login page
             >
               Login
             </a>
