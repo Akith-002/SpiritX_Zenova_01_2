@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashbord from "./Pages/Dashbord/Dashbord"; // Corrected spelling
 import Players from "./Pages/players/players"; // Correctly import the Players component
-
 // User Pages
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Home/Login";
 import Signup from "./Pages/Home/Signup";
-
+import TeamSelection from "./Pages/MyTeam/TeamSelection";
+import MyTeam from "./Pages/MyTeam/MyTeam";
 // Admin Pages
 import AdminLogin from "./Pages/admin/AdminLogin";
 import AdminSignup from "./Pages/admin/AdminSignup";
@@ -29,8 +29,10 @@ const App = () => {
           <Route path="/dashbord" element={<Dashbord />} />
           <Route path="/players" element={<Players />} /> 
           <Route path="/home" element={<Home />} /> 
-          <Route path="/login" element={<Login />} /> 
-          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/login" element={<Login />} /> {/* User Login Page */}
+          <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}          
+          <Route path="/TeamSelection" element={<TeamSelection />} /> {/* User Signup Page */}
+          <Route path="/MyTeam" element={<MyTeam />} /> {/* User Signup Page */}
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
