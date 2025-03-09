@@ -72,7 +72,7 @@ const Navbar = () => {
     AuthService.logout();
 
     // Navigate to login page
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -96,7 +96,7 @@ const Navbar = () => {
           ))}
           <li className={styles.navItem}>
             <Link
-              to="/login"
+              to="/"
               className={location.pathname === "/logout" ? "active" : ""}
               onClick={handleLogoutClick}
             >
