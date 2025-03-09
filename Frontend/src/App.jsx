@@ -18,6 +18,7 @@ import TournamentSummary from "./Pages/admin/TournamentSummary";
 // Spiriter Page (Assuming this is another part of the app)
 import Spiriter from "./Pages/spiriter/Spiriter";
 import Leaderboard from "./Pages/leaderboard/Leaderboard";
+import NewPlayers from "./Pages/MyTeam/NewPlayers";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
