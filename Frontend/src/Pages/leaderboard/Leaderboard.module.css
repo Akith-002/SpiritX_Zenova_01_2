@@ -101,6 +101,15 @@
   transform: scale(1.05) translateY(-5px);
 }
 
+.secondPlace {
+  border: 2px solid #c0c0c0;
+  background-color: #f8f8f8;
+}
+
+.secondPlace:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
 .rankBadge {
   position: absolute;
   top: -15px;
@@ -118,6 +127,11 @@
 
 .firstPlace .rankBadge {
   background-color: #ffd700;
+  color: #111827;
+}
+
+.secondPlace .rankBadge {
+  background-color: #c0c0c0;
   color: #111827;
 }
 
