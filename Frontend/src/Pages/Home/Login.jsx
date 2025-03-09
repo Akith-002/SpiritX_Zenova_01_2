@@ -1,7 +1,6 @@
 import { useState } from "react";
 import loginImage from "../../assets/loginImage.jpg"; // Ensure the image exists in assets folder
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import signupImage from "../../assets/signupImage.jpg"; // Ensure the image exists in assets folder
 
 const Login = () => {
   const [email, setEmail] = useState("");
