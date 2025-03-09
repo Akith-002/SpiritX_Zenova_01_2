@@ -1,44 +1,52 @@
 import { useState } from "react";
-import loginImage from "../../assets/loginImage.jpg"; // Ensure the image exists in assets folder
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import signupImage from "../../assets/signupImage.jpg"; // Ensure the image exists in assets folder
 
-const Login = () => {
+import { Link } from "react-router-dom";
+
+const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize navigate function
+  const [errorMessage, setErrorMessage] = useState(""); // For error handling
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
 
-    // Redirect to homepage after form submission
-    navigate("/dashbord"); // Corrected spelling
+    // Basic validation
+    if (!email || !password) {
+      setErrorMessage("Please enter both email and password.");
+      return;
+    }
+
+    console.log("Admin Email:", email, "Admin Password:", password);
+
+    // Admin authentication logic here (e.g., API call)
+    if (email !== "admin@example.com" || password !== "adminpassword") {
+      setErrorMessage("Invalid email or password.");
+      return;
+    }
+
+    // On successful login, redirect or perform necessary actions
+    setErrorMessage(""); // Clear previous errors
+    // You can redirect or continue the login flow here (e.g., navigate to dashboard)
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#2D336B] to-[#A9B5DF]">
       <div className="flex bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl w-full">
-        {/* Left Side (Image) */}
-        <div className="w-1/2 bg-[#2D336B] flex items-center justify-center relative">
-          <img
-            src={loginImage}
-            alt="Login Illustration"
-            className="w-full h-auto object-cover" // Changed to w-full for better width responsiveness
-          />
-        </div>
-
         {/* Right Side (Form) */}
-        <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">LOGIN</h2>
-          <p className="text-center text-[#7886C7] mb-6">Welcome back! Log in to continue</p>
+        <div className="w-full p-12 bg-[#F4F6FF] flex flex-col justify-center">
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">ADMIN LOGIN</h2>
+          <p className="text-center text-[#7886C7] mb-6">Login as an admin to manage the system</p>
+
+          {errorMessage && (
+            <p className="text-red-500 text-center mb-4">{errorMessage}</p>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
               <input
                 type="email"
-                placeholder="Enter your email address"
+                placeholder="Enter admin email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -49,7 +57,7 @@ const Login = () => {
               <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
               <input
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Enter admin password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -67,9 +75,9 @@ const Login = () => {
 
           <p className="text-center text-gray-600 text-sm mt-6">
             Don't have an account?{" "}
-            <a href="#" className="text-blue-500 hover:underline">
+            <Link to="/admin/signup" className="text-blue-500 hover:underline">
               Sign Up
-            </a>
+            </Link>
           </p>
         </div>
       </div>
@@ -77,4 +85,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;
