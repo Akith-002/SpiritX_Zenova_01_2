@@ -9,7 +9,7 @@ const Dashboard = () => {
         <Navbar />
       </div>
       <div className={styles.right}>
-        <h1 className={styles.title}>Players View</h1>
+        <h1 className={styles.title}>Dashbord View</h1>
       </div>
     </div>
   );

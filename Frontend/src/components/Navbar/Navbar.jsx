@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LayoutDashboard, Users, UserPlus, Trophy, DollarSign, MessageSquare, LogOut, Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const navItems = [
   {
     title: "Dashboard",
-    href: "/dashboard",
+    href: "/Dashbord",
     icon: LayoutDashboard,
   },
   {
     title: "Players",
-    href: "/dashboard/players",
+    href: "/players",
     icon: Users,
   },
   {
@@ -46,9 +46,15 @@ const navItems = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogoutClick = () => {
+    // Perform any logout logic here (e.g., clearing tokens)
+    navigate("/login");
   };
 
   return (
@@ -68,7 +74,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className={styles.navItem}>
-            <Link to="/logout" className={location.pathname === "/logout" ? "active" : ""}>
+            <Link to="/login" className={location.pathname === "/logout" ? "active" : ""} onClick={handleLogoutClick}>
               <LogOut /> Log Out
             </Link>
           </li>
