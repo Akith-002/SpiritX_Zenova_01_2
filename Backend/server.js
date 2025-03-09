@@ -22,7 +22,7 @@ fs.createReadStream("sample_data.csv")
   .on("data", (data) => playerData.push(data))
   .on("end", () => {
     console.log("Player data loaded successfully");
-  });
+});
 
 // Calculate player stats
 function calculatePlayerStats(player) {
@@ -108,26 +108,25 @@ app.post("/api/spiriter", async (req, res) => {
         const stats = calculatePlayerStats(foundPlayer);
 
         const response = `
-Here are ${foundPlayer.Name}'s statistics:
-University: ${foundPlayer.University}
-Category: ${foundPlayer.Category}
-Total Runs: ${foundPlayer["Total Runs"]}
-Balls Faced: ${foundPlayer["Balls Faced"]}
-Innings Played: ${foundPlayer["Innings Played"]}
-Batting Strike Rate: ${stats.battingStrikeRate.toFixed(2)}
-Batting Average: ${stats.battingAverage.toFixed(2)}
-${
-  foundPlayer.Category !== "Batsman"
-    ? `Wickets: ${foundPlayer.Wickets}
-Overs Bowled: ${foundPlayer["Overs Bowled"]}
-Runs Conceded: ${foundPlayer["Runs Conceded"]}
-Bowling Strike Rate: ${
-        stats.bowlingStrikeRate ? stats.bowlingStrikeRate.toFixed(2) : "N/A"
-      }
-Economy Rate: ${stats.economyRate ? stats.economyRate.toFixed(2) : "N/A"}`
-    : ""
-}
-`;
+            Here are ${foundPlayer.Name}'s statistics:
+            University: ${foundPlayer.University}
+            Category: ${foundPlayer.Category}
+            Total Runs: ${foundPlayer["Total Runs"]}
+            Balls Faced: ${foundPlayer["Balls Faced"]}
+            Innings Played: ${foundPlayer["Innings Played"]}
+            Batting Strike Rate: ${stats.battingStrikeRate.toFixed(2)}
+            Batting Average: ${stats.battingAverage.toFixed(2)}
+            ${
+              foundPlayer.Category !== "Batsman"
+                ? `Wickets: ${foundPlayer.Wickets}
+            Overs Bowled: ${foundPlayer["Overs Bowled"]}
+            Runs Conceded: ${foundPlayer["Runs Conceded"]}
+            Bowling Strike Rate: ${
+                    stats.bowlingStrikeRate ? stats.bowlingStrikeRate.toFixed(2) : "N/A"
+                  }
+            Economy Rate: ${stats.economyRate ? stats.economyRate.toFixed(2) : "N/A"}`
+                : ""
+            }`;
         res.json({ response });
       } else {
         // Use Gemini API for general queries about players
@@ -135,11 +134,11 @@ Economy Rate: ${stats.economyRate ? stats.economyRate.toFixed(2) : "N/A"}`
 
         // Create context for the model
         const context = `
-You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
-You have data about ${playerData.length} players. 
-You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
-If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
-`;
+        You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
+        You have data about ${playerData.length} players. 
+        You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
+        If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
+        `;
 
         const prompt = context + "\n\nUser query: " + message;
         const result = await model.generateContent(prompt);
@@ -153,11 +152,11 @@ If asked about information not in the player database, respond: "I don't have en
 
       // Create context for the model with player data
       const context = `
-You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
-You have data about these players: ${playerData.map((p) => p.Name).join(", ")}.
-You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
-If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
-`;
+      You are Spiriter, an AI assistant for a fantasy cricket game called Spirit11. You help users with information about university cricket players and their statistics. 
+      You have data about these players: ${playerData.map((p) => p.Name).join(", ")}.
+      You must never reveal or calculate player points. If asked about points, respond that you cannot reveal that information.
+      If asked about information not in the player database, respond: "I don't have enough knowledge to answer that question."
+      `;
 
       const prompt = context + "\n\nUser query: " + message;
       const result = await model.generateContent(prompt);
