@@ -27,13 +27,13 @@ const App = () => {
           <Route path="/login" element={<Login />} /> {/* User Login Page */}
           <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}
           {/* Admin Routes */}
-          <Route path="/admin/login" element={<AdminLogin />} />{" "}
+          <Route path="/admin/login" element={<AdminLogin />} />
           {/* Admin Login Page */}
-          <Route path="/admin/signup" element={<AdminSignup />} />{" "}
+          <Route path="/admin/signup" element={<AdminSignup />} />
           {/* Admin Signup Page */}
-          <Route path="/admin/players" element={<Players />} />{" "}
+          <Route path="/admin/players" element={<Players />} />
           {/* Admin Players Management */}
-          <Route path="/admin/player-stats" element={<PlayerStats />} />{" "}
+          <Route path="/admin/player-stats" element={<PlayerStats />} />
           {/* Admin Player Stats */}
           <Route
             path="/admin/tournament-summary"
