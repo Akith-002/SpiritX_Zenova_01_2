@@ -1,7 +1,10 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const MyTeam = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -13,7 +16,10 @@ const MyTeam = () => {
       <div className="flex-1 bg-gray-100 p-8">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold text-blue-900">Cricket Titans</h1>
-          <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+          <button 
+            className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+            onClick={() => navigate("/TeamSelection")} // Navigate to TeamSelection tab
+          >
             ✏️ Edit Team
           </button>
         </div>
@@ -34,8 +40,8 @@ const MyTeam = () => {
           </div>
           <div className="bg-white p-4 rounded-lg shadow">
             <p className="text-gray-500">Team Value</p>
-            <h2 className="text-3xl font-bold text-blue-900">$1750</h2>
-            <p className="text-gray-600">Out of $1000 budget</p>
+            <h2 className="text-3xl font-bold text-blue-900">Rs. 1750</h2>
+            <p className="text-gray-600">Out of Rs.1000 budget</p>
           </div>
         </div>
 
