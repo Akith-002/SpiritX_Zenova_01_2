@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PlayerCard from "../../components/PlayerCard.jsx";
-import "./Players.css";
+import styles from './adminplayers.module.css';  // Import the CSS Module
 
 const initialPlayers = [
   { id: 1, name: "Chamika Chandimal", university: "University of the Visual & Performing Arts", category: "Batsman", totalRuns: 530, ballsFaced: 588, inningsPlayed: 10, wickets: 0, oversBowled: 3, runsConceded: 21 },
@@ -41,10 +41,10 @@ const Players = () => {
 
   return (
     <div>
-      <h1>Players List</h1>
+      <h1 className={styles.h1}>Players List</h1>
       
       {/* Create New Player Form */}
-      <div className="create-player-form">
+      <div className={styles.createPlayerForm}>
         <h2>Create New Player</h2>
         <input type="text" name="name" placeholder="Name" value={newPlayer.name} onChange={(e) => handleChange(e, setNewPlayer)} />
         <input type="text" name="university" placeholder="University" value={newPlayer.university} onChange={(e) => handleChange(e, setNewPlayer)} />
@@ -60,24 +60,38 @@ const Players = () => {
 
       {/* Edit Player Form */}
       {editPlayer && (
-        <div className="edit-player-form">
+        <div className={styles.editPlayerForm}>
           <h2>Edit Player</h2>
+          <label>Name</label>
           <input type="text" name="name" placeholder="Name" value={editPlayer.name} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
+          <label>Total Runs</label>
           <input type="number" name="totalRuns" placeholder="Total Runs" value={editPlayer.totalRuns} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
+          <label>Balls Faced</label>
           <input type="number" name="ballsFaced" placeholder="Balls Faced" value={editPlayer.ballsFaced} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
+          <label>Innings Played</label>
           <input type="number" name="inningsPlayed" placeholder="Innings Played" value={editPlayer.inningsPlayed} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
+          <label>Wickets</label>
           <input type="number" name="wickets" placeholder="Wickets" value={editPlayer.wickets} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
+          <label>Overs Bowled</label>
           <input type="number" name="oversBowled" placeholder="Overs Bowled" value={editPlayer.oversBowled} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
+          <label>Runs Conceded</label>
           <input type="number" name="runsConceded" placeholder="Runs Conceded" value={editPlayer.runsConceded} onChange={(e) => handleChange(e, setEditPlayer)} />
+          
           <button onClick={updatePlayer}>Update Player</button>
           <button onClick={() => setEditPlayer(null)}>Cancel</button>
         </div>
       )}
 
       {/* Players List */}
-      <div className="players-list">
+      <div className={styles.playersList}>
         {players.map((player) => (
-          <div className="player-card" key={player.id}>
+          <div className={styles.playerCard} key={player.id}>
             <PlayerCard player={player} />
             <div>
               <button onClick={() => startEditing(player)}>Edit</button>
