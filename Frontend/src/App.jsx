@@ -14,6 +14,7 @@ import PlayerStats from "./Pages/admin/PlayerStats";
 import TournamentSummary from "./Pages/admin/TournamentSummary";
 // Spiriter Page (Assuming this is another part of the app)
 import Spiriter from "./Pages/Spiriter";
+import Leaderboard from "./Pages/leaderboard/Leaderboard";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           {/* Admin Players Management */}
           <Route path="/admin/player-stats" element={<PlayerStats />} />
           {/* Admin Player Stats */}
+          <Route path="/leaderboard" element={<Leaderboard />} />
           <Route
             path="/admin/tournament-summary"
             element={<TournamentSummary />}

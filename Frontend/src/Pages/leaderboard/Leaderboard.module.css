@@ -1,0 +1,407 @@
+.container {
+  display: flex;
+  background: rgb(255, 255, 255);
+}
+
+.left {
+  justify-content: center;
+}
+
+.right {
+  flex: 1;
+  padding: 40px;
+  align-items: left;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 20px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 5px rgb(83, 92, 131);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+  text-align: left;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin: 4px 0 0;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 8px 12px;
+  width: 300px;
+}
+
+.searchIcon {
+  color: #9ca3af;
+  margin-right: 8px;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #111827;
+  font-size: 14px;
+}
+
+/* Top Rankers Section */
+.topSection {
+  margin-bottom: 32px;
+}
+
+.topRankersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.topRankerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.topRankerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.firstPlace {
+  border: 2px solid #ffd700;
+  background-color: #fffdf5;
+  transform: scale(1.05);
+}
+
+.firstPlace:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.rankBadge {
+  position: absolute;
+  top: -15px;
+  width: 40px;
+  height: 40px;
+  background-color: #2d336b;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 3px solid white;
+}
+
+.firstPlace .rankBadge {
+  background-color: #ffd700;
+  color: #111827;
+}
+
+.trophyIcon {
+  color: #111827;
+}
+
+.rankerInfo {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.rankerName {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0 4px;
+  color: #111827;
+}
+
+.rankerTeam {
+  font-weight: 500;
+  color: #4b5563;
+  margin: 0;
+}
+
+.rankerUniversity {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 4px 0 16px;
+}
+
+.rankerStats {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+.rankerPoints {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.rankerWinnings {
+  font-size: 14px;
+  font-weight: 600;
+  color: #047857;
+}
+
+/* Filters Section */
+.filtersSection {
+  margin-bottom: 24px;
+}
+
+.filterTabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.filterTab {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterTab:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.activeFilter {
+  background-color: #f3f4f6;
+  color: #2d336b;
+  font-weight: 500;
+}
+
+.moreFiltersBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.moreFiltersBtn:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+/* Table Styles */
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.leaderboardTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.leaderboardTable th {
+  background-color: #f9fafb;
+  color: #4b5563;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.leaderboardTable th:hover {
+  background-color: #f3f4f6;
+}
+
+.thContent {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sortActive {
+  color: #2d336b;
+  background-color: #f4f6ff;
+}
+
+.leaderboardTable td {
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #111827;
+}
+
+.tableRow:hover {
+  background-color: #f9fafb;
+}
+
+.rankCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rankIndicator {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.topRank {
+  background-color: #ffd700;
+  color: #111827;
+}
+
+.goodRank {
+  background-color: #f4f6ff;
+  color: #2d336b;
+}
+
+.pointsCell {
+  font-weight: 600;
+  color: #2d336b;
+}
+
+.winningsCell {
+  font-weight: 600;
+  color: #047857;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.paginationBtn {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background-color: white;
+  color: #4b5563;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.paginationBtn:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.paginationNumbers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.paginationNumbers button {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background-color: white;
+  color: #4b5563;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.paginationNumbers button:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.paginationActive {
+  background-color: #2d336b !important;
+  color: white !important;
+  border-color: #2d336b !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .topRankersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .firstPlace {
+    transform: none;
+  }
+
+  .firstPlace:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .searchContainer {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .filterTabs {
+    overflow-x: auto;
+    padding-bottom: 16px;
+  }
+
+  .filterTab {
+    white-space: nowrap;
+  }
+}
