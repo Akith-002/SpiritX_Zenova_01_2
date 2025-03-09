@@ -30,7 +30,7 @@ const Budget = () => {
 
         {/* Budget Overview */}
         <div className="grid grid-cols-3 gap-6 mt-6">
-          {[{ label: "Total Budget", value: "Rs. 1000" }, { label: "Used Budget", value: "Rs. 750" }, { label: "Remaining Budget", value: "Rs. 250" }].map((item, index) => (
+          {[{ label: "Total Budget", value: "Rs. 9,000,000" }, { label: "Used Budget", value: "Rs. 7,500,000" }, { label: "Remaining Budget", value: "Rs. 2,500,000" }].map((item, index) => (
             <div key={index} className="bg-white p-4 rounded-lg shadow">
               <p className="text-gray-500">{item.label}</p>
               <h2 className="text-3xl font-bold text-[#002855]">{item.value}</h2>

@@ -84,9 +84,9 @@ const AdminLogin = () => {
           </form>
 
           <p className="text-center text-gray-600 text-sm mt-6">
-            Don't have an account?{" "}
-            <Link to="/admin/signup" className="text-blue-500 hover:underline">
-              Sign Up
+            Not an admin?{" "}
+            <Link to="/login" className="text-[#2D336B] font-medium underline">
+              Login as a user
             </Link>
           </p>
         </div>
