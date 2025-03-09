@@ -1,17 +1,18 @@
 import { useState } from "react";
 import signupImage from "../../assets/signupImage.jpg"; // Ensure the image exists in assets folder
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Corrected import
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize navigate function
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Name:", name, "Password:", password);
 
-    Navigate("/dashbord"); // Corrected spelling
+    navigate("/dashbord"); // Corrected spelling
   };
 
   return (
@@ -76,7 +77,11 @@ const Signup = () => {
 
           <p className="text-center text-gray-600 text-sm mt-6">
             Already have an account?{" "}
-            <a href="#" className="text-blue-500 hover:underline">
+            <a
+              href="#"
+              className="text-blue-500 hover:underline"
+              onClick={() => navigate("/login")} // Navigate to login page
+            >
               Login
             </a>
           </p>

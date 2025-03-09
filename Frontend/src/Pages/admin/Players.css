@@ -10,7 +10,7 @@ body {
 h1 {
     text-align: center;
     font-size: 2.5rem;
-    margin-top: 40px;
+    /* margin-top: 40px; */   /* Removed margin-top for better alignment */
     color: #2d336b;
 }
 
