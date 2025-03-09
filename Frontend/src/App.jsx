@@ -17,6 +17,7 @@ import TournamentSummary from "./Pages/admin/TournamentSummary";
 // Spiriter Page (Assuming this is another part of the app)
 import Spiriter from "./Pages/spiriter/Spiriter";
 import Leaderboard from "./Pages/leaderboard/Leaderboard";
+import PlayerStats from "./Pages/admin/PlayerStats";
 
 const App = () => {
   return (

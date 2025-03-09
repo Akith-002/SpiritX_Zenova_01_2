@@ -1,6 +1,6 @@
 import { useState } from "react";
 import loginImage from "../../assets/loginImage.jpg"; // Ensure the image exists in assets folder
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,12 +29,18 @@ const Login = () => {
 
         {/* Right Side (Form) */}
         <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">LOGIN</h2>
-          <p className="text-center text-[#7886C7] mb-6">Welcome back! Log in to continue</p>
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">
+            LOGIN
+          </h2>
+          <p className="text-center text-[#7886C7] mb-6">
+            Welcome back! Log in to continue
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
+              <label className="block text-[#2D336B] font-semibold">
+                E-MAIL
+              </label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -45,7 +51,9 @@ const Login = () => {
               />
             </div>
             <div>
-              <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
+              <label className="block text-[#2D336B] font-semibold">
+                PASSWORD
+              </label>
               <input
                 type="password"
                 placeholder="Enter your password"
@@ -65,9 +73,16 @@ const Login = () => {
           </form>
 
           <p className="text-center text-gray-600 text-sm mt-6">
-            Don't have an account?{" "}
-            <a href="#" className="text-blue-500 hover:underline">
+            Don't have an account?
+            <Link to="/signup" className="text-blue-500 hover:underline">
               Sign Up
+            </Link>
+          </p>
+          {/* if an admin login from here */}
+          <p className="text-center text-gray-600 text-sm mt-6">
+            Admin?
+            <a href="/admin/login" className="text-blue-500 hover:underline">
+              Login Here
             </a>
           </p>
         </div>

@@ -1,17 +1,19 @@
 import { useState } from "react";
-import signupImage from "../../assets/signupImage.jpg"; // Ensure the image exists in assets folder
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Use useNavigate
+import signupImage from "../../assets/signupImage.jpg";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate(); // Initialize navigate function
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Name:", name, "Password:", password);
 
-    Navigate("/dashbord"); // Corrected spelling
+    navigate("/dashboard"); // Correctly using navigate
   };
 
   return (
@@ -28,12 +30,18 @@ const Signup = () => {
 
         {/* Right Side (Form) */}
         <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
-          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">SIGN UP</h2>
-          <p className="text-center text-[#7886C7] mb-6">Unlock your cricket world</p>
+          <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">
+            SIGN UP
+          </h2>
+          <p className="text-center text-[#7886C7] mb-6">
+            Unlock your cricket world
+          </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-[#2D336B] font-semibold">E-MAIL</label>
+              <label className="block text-[#2D336B] font-semibold">
+                E-MAIL
+              </label>
               <input
                 type="email"
                 placeholder="Enter your email address"
@@ -55,7 +63,9 @@ const Signup = () => {
               />
             </div>
             <div>
-              <label className="block text-[#2D336B] font-semibold">PASSWORD</label>
+              <label className="block text-[#2D336B] font-semibold">
+                PASSWORD
+              </label>
               <input
                 type="password"
                 placeholder="Enter your password"
@@ -76,7 +86,10 @@ const Signup = () => {
 
           <p className="text-center text-gray-600 text-sm mt-6">
             Already have an account?{" "}
-            <a href="#" className="text-blue-500 hover:underline">
+            <a
+              onClick={() => navigate("/login")} // Corrected the navigation
+              className="text-blue-500 hover:underline"
+            >
               Login
             </a>
           </p>
