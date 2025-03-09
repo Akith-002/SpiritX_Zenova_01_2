@@ -31,7 +31,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} /> {/* User Login Page */}
           <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}
-          <Route path="/TeamSelection" element={<TeamSelection />} />{" "}
+          <Route path="/TeamSelection" element={<TeamSelection />} />{" "}/admin/login
           <Route path="/Budget" element={<Budget />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/spiriter" element={<Spiriter />} />{" "}
@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/MyTeam" element={<MyTeam />} /> {/* User Signup Page */}
           
           {/* Admin Routes */}
-          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="" element={<AdminLogin />} />
           <Route path="/admin/signup" element={<AdminSignup />} />
           <Route path="/admin/players" element={<AdminPlayers />} />
           <Route path="/admin/player-stats" element={<AdminPlayerStats />} />

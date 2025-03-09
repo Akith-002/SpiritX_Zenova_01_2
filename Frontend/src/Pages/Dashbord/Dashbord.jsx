@@ -2,8 +2,11 @@ import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './Dashbord.module.css'; // Correctly import the CSS module
 import { Users, Trophy, DollarSign, TrendingUp, LogOut, MessageSquare, User, UserPlus } from "lucide-react";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -16,7 +19,9 @@ const Dashboard = () => {
             <h1 className={styles.title}>Dashboard</h1>
             <p className={styles.subtitle}>Welcome to Spirit11 Fantasy Cricket League</p>
           </div>
-          <button className={styles.createTeamBtn}>Create Your Team</button>
+          <button className={styles.createTeamBtn} onClick={() => navigate("/TeamSelection")}>
+            Create Your Team
+          </button>
         </header>
         <div className={styles.statsGrid}>
           <div className={styles.statCard}>
