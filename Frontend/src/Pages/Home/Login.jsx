@@ -1,18 +1,45 @@
 import { useState } from "react";
-import loginImage from "../../assets/loginImage.jpg"; // Ensure the image exists in assets folder
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import loginImage from "../../assets/loginImage.jpg";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"; // Make sure axios is installed
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Initialize navigate function
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email, "Password:", password);
+    setError("");
+    setLoading(true);
 
-    // Redirect to homepage after form submission
-    navigate("/dashbord"); // Corrected spelling
+    try {
+      // Call the backend login endpoint
+      const response = await axios.post(
+        "http://localhost:3000/api/users/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      // Store token in localStorage
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      // Redirect to dashboard
+      navigate("/dashbord");
+    } catch (error) {
+      console.error("Login failed:", error);
+      setError(
+        error.response?.data?.message ||
+          "Login failed. Please check your credentials."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -23,7 +50,7 @@ const Login = () => {
           <img
             src={loginImage}
             alt="Login Illustration"
-            className="w-full h-auto object-cover" // Changed to w-full for better width responsiveness
+            className="w-full h-auto object-cover"
           />
         </div>
 
@@ -35,6 +62,12 @@ const Login = () => {
           <p className="text-center text-[#7886C7] mb-6">
             Welcome back! Log in to continue
           </p>
+
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -66,21 +99,21 @@ const Login = () => {
 
             <button
               type="submit"
-              className="w-full bg-[#2D336B] text-white py-3 rounded-lg hover:bg-[#1F2855] transition duration-200 font-semibold mt-4"
+              disabled={loading}
+              className="w-full bg-[#2D336B] text-white py-3 rounded-lg hover:bg-[#1F2855] transition duration-200 font-semibold mt-4 disabled:opacity-70"
             >
-              LOGIN
+              {loading ? "LOGGING IN..." : "LOGIN"}
             </button>
           </form>
 
           <p className="text-center text-gray-600 text-sm mt-6">
-            Don't have an account?
+            Don't have an account?{" "}
             <Link to="/signup" className="text-blue-500 hover:underline">
               Sign Up
             </Link>
           </p>
-          {/* if an admin login from here */}
           <p className="text-center text-gray-600 text-sm mt-6">
-            Admin?
+            Admin?{" "}
             <a href="/admin/login" className="text-blue-500 hover:underline">
               Login Here
             </a>
