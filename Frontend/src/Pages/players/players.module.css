@@ -49,7 +49,7 @@
   border-radius: 5px;
   padding: 5px 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width:100%;
+  width: 100%;
   max-height: 45px;
 }
 
@@ -81,12 +81,12 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
-  color:#2D336B;
+  color: #2d336b;
   cursor: pointer;
 }
 
 .dropdownButton:hover {
-  background-color: #2D336B;
+  background-color: #2d336b;
   color: #fff;
 }
 
@@ -113,4 +113,56 @@
 
 .chevron {
   margin-left: auto;
+}
+
+/* Add these styles to your existing players.module.css file */
+
+.playersContainer {
+  margin-top: 2rem;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.playersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.playersTable th,
+.playersTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.playersTable th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+  color: #444;
+}
+
+.playersTable tr:last-child td {
+  border-bottom: none;
+}
+
+.playersTable tr:hover {
+  background-color: #f9f9f9;
+}
+
+.loadingState,
+.errorState,
+.emptyState {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.errorState {
+  color: #e53e3e;
 }
