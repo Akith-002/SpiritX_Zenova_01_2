@@ -32,12 +32,15 @@ const navItems = [
     href: "/TeamSelection",
     icon: UserPlus,
   },
-
-
   {
     title: "My Team",
     href: "/MyTeam",
     icon: User,
+  },
+  {
+    title: "Budget",
+    href: "/Budget",
+    icon: DollarSign,
   },
   {
     title: "Leaderboard",
