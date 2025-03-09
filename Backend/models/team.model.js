@@ -1,7 +1,7 @@
 const { text } = require('express');
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema ({
+const teamSchema = mongoose.Schema ({
     username: {
         type: String,
         required: [true, "Username is required"],
