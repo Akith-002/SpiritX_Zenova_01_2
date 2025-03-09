@@ -43,13 +43,7 @@ const App = () => {
             element={<TournamentSummary />}
           />
           {/* Admin Players Management */}
-          <Route path="/admin/player-stats" element={<PlayerStats />} />
-          {/* Admin Player Stats */}
           <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route
-            path="/admin/tournament-summary"
-            element={<TournamentSummary />}
-          />
           {/* Spiriter Page */}
           <Route path="/spiriter" element={<Spiriter />} />{" "}
         </Routes>
