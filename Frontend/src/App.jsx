@@ -36,7 +36,7 @@ const App = () => {
           <Route element={<ProtectedRoute />}>
             {/* Add other protected routes here */}
             <Route path="/dashbord" element={<Dashbord />} />
-            <Route path="/players" element={<Players />} />
+            <Route path="/NewPlayers" element={<NewPlayers/>} />
             <Route path="/TeamSelection" element={<TeamSelection />} />{" "}
             <Route path="/MyTeam" element={<MyTeam />} />{" "}
             {/* User MyTeam Page */}
