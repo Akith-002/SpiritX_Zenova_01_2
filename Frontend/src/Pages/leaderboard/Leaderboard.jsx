@@ -97,22 +97,6 @@ const Leaderboard = () => {
       points: 2734,
       winnings: 2500,
     },
-    {
-      rank: 11,
-      name: "Lalith Kumara",
-      teamName: "Victory Eleven",
-      university: "Kelaniya University",
-      points: 2698,
-      winnings: 1000,
-    },
-    {
-      rank: 12,
-      name: "Tharindu Sampath",
-      teamName: "Dream Team",
-      university: "Ruhuna University",
-      points: 2645,
-      winnings: 1000,
-    },
   ]);
 
   // Sorting functionality
