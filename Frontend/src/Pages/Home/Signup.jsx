@@ -17,16 +17,16 @@ const Signup = () => {
         {/* Left Side (Image) */}
         <div className="w-1/2 bg-[#2D336B] flex items-center justify-center relative">
           <img
-                      src={signupImage}
-                      alt="Login Illustration"
-                      className="w-full h-auto object-cover" // Changed to w-full for better width responsiveness
-                    />
+            src={signupImage}
+            alt="Signup Illustration"
+            className="w-full h-auto object-cover"
+          />
         </div>
 
         {/* Right Side (Form) */}
         <div className="w-1/2 p-12 bg-[#F4F6FF] flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-[#2D336B] text-center mb-4">SIGN UP</h2>
-          <p className="text-center text-[#7886C7] mb-6">Unclock your cricket world</p>
+          <p className="text-center text-[#7886C7] mb-6">Unlock your cricket world</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
@@ -83,4 +83,4 @@ const Signup = () => {
   );
 };
 
-export default Signup; 
+export default Signup;
