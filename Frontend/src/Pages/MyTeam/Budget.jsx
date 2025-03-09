@@ -30,7 +30,7 @@ const Budget = () => {
 
         {/* Budget Overview */}
         <div className="grid grid-cols-3 gap-6 mt-6">
-          {[{ label: "Total Budget", value: "Rs. 1000" }, { label: "Used Budget", value: "Rs. 750" }, { label: "Remaining Budget", value: "Rs. 250" }].map((item, index) => (
+          {[{ label: "Total Budget", value: "Rs. 9 000,000.00" }, { label: "Used Budget", value: "Rs. 6 500,000.00" }, { label: "Remaining Budget", value: "Rs. 2 500,000.00" }].map((item, index) => (
             <div key={index} className="bg-white p-4 rounded-lg shadow">
               <p className="text-gray-500">{item.label}</p>
               <h2 className="text-3xl font-bold text-[#002855]">{item.value}</h2>
@@ -101,35 +101,35 @@ const Budget = () => {
                 <td className="p-3">Ashan Kumar</td>
                 <td>Moratuwa University</td>
                 <td>Batsman</td>
-                <td>Rs. 150</td>
+                <td>Rs. 150,000</td>
                 <td>20%</td>
               </tr>
               <tr className="border-b">
                 <td className="p-3">Rajitha Perera</td>
                 <td>Colombo University</td>
                 <td>Bowler</td>
-                <td>Rs. 100</td>
+                <td>Rs. 100,000</td>
                 <td>13%</td>
               </tr>
               <tr className="border-b">
                 <td className="p-3">Dinesh Jayawardena</td>
                 <td>Jaffna University</td>
                 <td>All-rounder</td>
-                <td>Rs. 120</td>
+                <td>Rs. 120,000</td>
                 <td>16%</td>
               </tr>
               <tr className="border-b">
                 <td className="p-3">Tharindu Silva</td>
                 <td>Kelaniya University</td>
                 <td>Wicket-keeper</td>
-                <td>Rs. 80</td>
+                <td>Rs. 80 000</td>
                 <td>10%</td>
               </tr>
               <tr className="border-b">
                 <td className="p-3">Chamindu Pathirana</td>
                 <td>Moratuwa University</td>
                 <td>Batsman</td>
-                <td>Rs. 130</td>
+                <td>Rs. 130,000</td>
                 <td>17%</td>
               </tr>
               {/* You can continue adding more rows here as needed */}
