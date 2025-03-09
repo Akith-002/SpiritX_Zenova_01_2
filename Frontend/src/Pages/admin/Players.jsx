@@ -4,19 +4,68 @@ import "./Players.css"; // Import the CSS file for styles
 
 const Players = () => {
   const [players, setPlayers] = useState([
-    { id: 1, name: "Player 1", role: "Batsman", stats: "100 runs" },
-    { id: 2, name: "Player 2", role: "Bowler", stats: "5 wickets" },
+    {
+      id: 1,
+      name: "Chamika Chandimal",
+      university: "University of the Visual & Performing Arts",
+      category: "Batsman",
+      totalRuns: 530,
+      inningsPlayed: 10,
+      wickets: 0,
+      oversBowled: 8,
+      runsConceded: 21
+    },
+    {
+      id: 2,
+      name: "Dimuth Dhananjaya",
+      university: "University of the Visual & Performing Arts",
+      category: "All-Rounder",
+      totalRuns: 250,
+      inningsPlayed: 10,
+      wickets: 5,
+      oversBowled: 11,
+      runsConceded: 240
+    },
+    // Add more players similarly
   ]);
 
-  const [newPlayer, setNewPlayer] = useState({ name: "", role: "", stats: "" });
+  const [newPlayer, setNewPlayer] = useState({
+    name: "",
+    university: "",
+    category: "",
+    totalRuns: "",
+    inningsPlayed: "",
+    wickets: "",
+    oversBowled: "",
+    runsConceded: ""
+  });
 
   // Create player function
   const createPlayer = () => {
     setPlayers([
       ...players,
-      { id: players.length + 1, name: newPlayer.name, role: newPlayer.role, stats: newPlayer.stats }
+      {
+        id: players.length + 1,
+        name: newPlayer.name,
+        university: newPlayer.university,
+        category: newPlayer.category,
+        totalRuns: newPlayer.totalRuns,
+        inningsPlayed: newPlayer.inningsPlayed,
+        wickets: newPlayer.wickets,
+        oversBowled: newPlayer.oversBowled,
+        runsConceded: newPlayer.runsConceded
+      }
     ]);
-    setNewPlayer({ name: "", role: "", stats: "" }); // Reset the form
+    setNewPlayer({
+      name: "",
+      university: "",
+      category: "",
+      totalRuns: "",
+      inningsPlayed: "",
+      wickets: "",
+      oversBowled: "",
+      runsConceded: ""
+    }); // Reset the form
   };
 
   // Delete player function
@@ -46,15 +95,45 @@ const Players = () => {
         />
         <input
           type="text"
-          placeholder="Role"
-          value={newPlayer.role}
-          onChange={(e) => setNewPlayer({ ...newPlayer, role: e.target.value })}
+          placeholder="University"
+          value={newPlayer.university}
+          onChange={(e) => setNewPlayer({ ...newPlayer, university: e.target.value })}
         />
         <input
           type="text"
-          placeholder="Stats"
-          value={newPlayer.stats}
-          onChange={(e) => setNewPlayer({ ...newPlayer, stats: e.target.value })}
+          placeholder="Category"
+          value={newPlayer.category}
+          onChange={(e) => setNewPlayer({ ...newPlayer, category: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Total Runs"
+          value={newPlayer.totalRuns}
+          onChange={(e) => setNewPlayer({ ...newPlayer, totalRuns: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Innings Played"
+          value={newPlayer.inningsPlayed}
+          onChange={(e) => setNewPlayer({ ...newPlayer, inningsPlayed: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Wickets"
+          value={newPlayer.wickets}
+          onChange={(e) => setNewPlayer({ ...newPlayer, wickets: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Overs Bowled"
+          value={newPlayer.oversBowled}
+          onChange={(e) => setNewPlayer({ ...newPlayer, oversBowled: e.target.value })}
+        />
+        <input
+          type="number"
+          placeholder="Runs Conceded"
+          value={newPlayer.runsConceded}
+          onChange={(e) => setNewPlayer({ ...newPlayer, runsConceded: e.target.value })}
         />
         <button onClick={createPlayer}>Add Player</button>
       </div>
