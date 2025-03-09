@@ -2,17 +2,20 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashbord from "./Pages/Dashbord/Dashbord"; // Corrected spelling
 import Players from "./Pages/players/players"; // Correctly import the Players component
+
 // User Pages
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Home/Login";
 import Signup from "./Pages/Home/Signup";
+
 // Admin Pages
 import AdminLogin from "./Pages/admin/AdminLogin";
 import AdminSignup from "./Pages/admin/AdminSignup";
-import AdminPlayers from "./Pages/admin/Players";  // Renamed to avoid conflict
-import AdminPlayerStats from "./Pages/admin/PlayerStats";  // Renamed to avoid conflict
+import AdminPlayers from "./Pages/admin/Players";
+import AdminPlayerStats from "./Pages/admin/PlayerStats"; // Ensure correct import
 import TournamentSummary from "./Pages/admin/TournamentSummary";
-// Spiriter Page (Assuming this is another part of the app)
+
+// Spiriter Page
 import Spiriter from "./Pages/Spiriter";
 
 const App = () => {
@@ -21,22 +24,22 @@ const App = () => {
       <div className="App">
         <Routes>
           {/* User Routes */}
-          <Route path="/" element={<Home />} /> {/* Home Page */}
-          <Route path="/dashbord" element={<Dashbord />} /> {/* Dashboard Page */}
-          <Route path="/players" element={<Players />} /> {/* Players Page */}
-          <Route path="/home" element={<Home />} /> {/* Home Page */}
-          <Route path="/login" element={<Login />} /> {/* User Login Page */}
-          <Route path="/signup" element={<Signup />} /> {/* User Signup Page */}
+          <Route path="/" element={<Home />} /> 
+          <Route path="/dashbord" element={<Dashbord />} />
+          <Route path="/players" element={<Players />} /> 
+          <Route path="/home" element={<Home />} /> 
+          <Route path="/login" element={<Login />} /> 
+          <Route path="/signup" element={<Signup />} /> 
 
           {/* Admin Routes */}
-          <Route path="/admin/login" element={<AdminLogin />} /> {/* Admin Login Page */}
-          <Route path="/admin/signup" element={<AdminSignup />} /> {/* Admin Signup Page */}
-          <Route path="/admin/players" element={<AdminPlayers />} /> {/* Admin Players Management */}
-          <Route path="/admin/player-stats" element={<AdminPlayerStats />} /> {/* Admin Player Stats */}
-          <Route path="/admin/tournament-summary" element={<TournamentSummary />} /> {/* Admin Tournament Summary */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/signup" element={<AdminSignup />} />
+          <Route path="/admin/players" element={<AdminPlayers />} />
+          <Route path="/admin/player-stats" element={<AdminPlayerStats />} />
+          <Route path="/admin/tournament-summary" element={<TournamentSummary />} />
 
           {/* Spiriter Page */}
-          <Route path="/spiriter" element={<Spiriter />} /> {/* Spiriter Page */}
+          <Route path="/spiriter" element={<Spiriter />} /> 
         </Routes>
       </div>
     </Router>

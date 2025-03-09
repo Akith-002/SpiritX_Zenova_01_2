@@ -12,7 +12,7 @@ const Login = () => {
     console.log("Email:", email, "Password:", password);
 
     // Redirect to homepage after form submission
-    navigate("/home");
+    navigate("/dashbord"); // Corrected spelling
   };
 
   return (
